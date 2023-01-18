@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 
-export default function () {
+export default function Header1() {
   return (
-    <header className="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+    <header className="lg:px-16 px-6 bg-gray-400 flex w-screen flex-wrap items-center lg:py-0 py-2 ">
       <style>
         {`
             #menu-toggle:checked + #menu {
@@ -36,12 +36,12 @@ export default function () {
       <input type="checkbox" className="hidden" id="menu-toggle" />
 
       <div
-        className="hidden lg:flex lg:items-center lg:w-auto w-full"
+        className="hidden lg:flex lg:flex-1 lg:items-center lg:w-auto w-full"
         id="menu"
       >
-        <div className="flex flex-1 justify-between lg:px-16 items-center">
-          <nav>
-            <ul className="lg:flex items-center justify-between text-base  text-gray-700 pt-4 lg:pt-0">
+        <div className="flex flex-1  justify-center lg:px-2 items-center">
+          <nav className="w-full">
+            <ul className="lg:flex items-center w-full justify-evenly text-xl  text-gray-700 pt-4 lg:pt-0">
               <li>
                 <Link
                   href={"/"}
@@ -53,21 +53,23 @@ export default function () {
               <li>
                 <Link
                   href={"/"}
-                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent  hover:border-indigo-400"
+                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
                 >
                   ON TAP
                 </Link>
               </li>
             </ul>
           </nav>
-          <div className="flex justify-between flex-1 items-center ">
-            <Link href={"/"}>
-              <Image src="/logo.png" alt="logo" width={100} height={100} />
-            </Link>
-          </div>
-          <nav>
-            <ul className="lg:flex items-center justify-between text-base  text-gray-700 pt-4 lg:pt-0">
-              <li>
+        </div>
+        <div className="hidden lg:flex justify-between  items-center">
+          <Link href={"/"}>
+            <Image src="/logo.png" alt="logo" width={100} height={100} />
+          </Link>
+        </div>
+        <div className="flex flex-1  justify-center lg:px-2 items-center">
+          <nav className="w-full">
+            <ul className="lg:flex items-center w-full justify-evenly text-xl  text-gray-700 pt-4 lg:pt-0">
+              <li className="mx-auto">
                 <Link
                   href={"/"}
                   className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
@@ -75,7 +77,7 @@ export default function () {
                   OUR STORY
                 </Link>
               </li>
-              <li>
+              <li className="mx-auto">
                 <Link
                   href={"/"}
                   className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
