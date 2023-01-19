@@ -1,10 +1,12 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import HeaderButton from "./HeaderButton";
 
 export default function Header1() {
   return (
-    <header className="lg:px-16 px-6 bg-gray-400 flex w-screen flex-wrap items-center lg:py-0 py-2 ">
+    <header className="lg:px-16 px-6 bg-white flex w-full flex-wrap items-center lg:py-0 py-2 h-1/3">
       <style>
         {`
             #menu-toggle:checked + #menu {
@@ -14,7 +16,7 @@ export default function Header1() {
       </style>
       <div className="flex justify-between flex-1 items-center lg:hidden">
         <Link href={"/"}>
-          <Image src="/logo.png" alt="logo" width={100} height={100} />
+          <Image src="/logo.png" alt="logo" width={50} height={50} />
         </Link>
       </div>
 
@@ -41,50 +43,22 @@ export default function Header1() {
       >
         <div className="flex flex-1  justify-center lg:px-2 items-center">
           <nav className="w-full">
-            <ul className="lg:flex items-center w-full justify-evenly text-xl  text-gray-700 pt-4 lg:pt-0">
-              <li>
-                <Link
-                  href={"/"}
-                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
-                >
-                  MENU
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={"/"}
-                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
-                >
-                  ON TAP
-                </Link>
-              </li>
+            <ul className="lg:flex items-center w-full justify-evenly lg:text-xl  text-gray-700 pt-4 lg:pt-0">
+              <HeaderButton title="MENU" linkhref="/" />
+              <HeaderButton title="ON TAP" linkhref="/" />
             </ul>
           </nav>
         </div>
-        <div className="hidden lg:flex justify-between  items-center">
+        <div className="hidden lg:flex justify-between items-center ">
           <Link href={"/"}>
             <Image src="/logo.png" alt="logo" width={100} height={100} />
           </Link>
         </div>
         <div className="flex flex-1  justify-center lg:px-2 items-center">
           <nav className="w-full">
-            <ul className="lg:flex items-center w-full justify-evenly text-xl  text-gray-700 pt-4 lg:pt-0">
-              <li className="mx-auto">
-                <Link
-                  href={"/"}
-                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
-                >
-                  OUR STORY
-                </Link>
-              </li>
-              <li className="mx-auto">
-                <Link
-                  href={"/"}
-                  className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
-                >
-                  BLOG
-                </Link>
-              </li>
+            <ul className="lg:flex items-center w-full justify-evenly lg:text-xl  text-gray-700 pt-4 lg:pt-0">
+              <HeaderButton title="OUR STORY" linkhref="/" />
+              <HeaderButton title="BLOG" linkhref="/" />
             </ul>
           </nav>
         </div>

@@ -1,11 +1,14 @@
 import React from "react";
-import Header1 from "../components/Header1";
 import Header from "../components/Header";
+import Hero from "../components/Hero";
+import ImageGallery from "../components/ImageGallery";
 
 export default function page() {
   return (
     <div>
-      <Header1 />
+      <Header />
+      <Hero />
+      <ImageGallery />
 
       <div className="px-4">
         <div className="max-w-3xl bg-black text-white rounded-lg mx-auto my-16 p-16">
