@@ -40,7 +40,7 @@ export default function HeaderButton({ title, linkhref }: HeaderButtonProps) {
       <motion.div
         variants={buttonMotionUp}
         transition={{ duration: 0.5 }}
-        className="w-full h-1 bg-black"
+        className="w-full h-1 bg-gray-200"
       />
       <Link href={linkhref} className="lg:p-4 py-3 px-0 block ">
         {title}
@@ -48,7 +48,7 @@ export default function HeaderButton({ title, linkhref }: HeaderButtonProps) {
       <motion.div
         variants={buttonMotionDown}
         transition={{ duration: 0.5 }}
-        className="w-full h-1 bg-black"
+        className="w-full h-1 bg-gray-200"
       />
     </motion.li>
   );

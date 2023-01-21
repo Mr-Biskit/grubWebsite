@@ -3,10 +3,10 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import HeaderButton from "./HeaderButton";
-
+import { motion } from "framer-motion";
 export default function Header1() {
   return (
-    <header className="lg:px-16 px-6 bg-white flex w-full flex-wrap items-center lg:py-0 py-2 h-1/3">
+    <header className="lg:px-16 px-6 bg-black flex w-full flex-wrap items-center lg:py-0 py-2 h-1/3">
       <style>
         {`
             #menu-toggle:checked + #menu {
@@ -16,11 +16,14 @@ export default function Header1() {
       </style>
       <div className="flex justify-between flex-1 items-center lg:hidden">
         <Link href={"/"}>
-          <Image src="/logo.png" alt="logo" width={50} height={50} />
+          <Image src="/logoName.png" alt="logo" width={100} height={100} />
         </Link>
       </div>
 
-      <label htmlFor="menu-toggle" className="cursor-pointer lg:hidden block">
+      <label
+        htmlFor="menu-toggle"
+        className="cursor-pointer lg:hidden block bg-white rounded-lg"
+      >
         <svg
           height="32px"
           id="Layer_1"
@@ -41,27 +44,39 @@ export default function Header1() {
         className="hidden lg:flex lg:flex-1 lg:items-center lg:w-auto w-full"
         id="menu"
       >
-        <div className="flex flex-1  justify-center lg:px-2 items-center">
+        <motion.div
+          initial={{ x: -200, opacity: 0 }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-1  justify-center lg:px-2 items-center"
+        >
           <nav className="w-full">
-            <ul className="lg:flex items-center w-full justify-evenly lg:text-xl  text-gray-700 pt-4 lg:pt-0">
+            <ul className="lg:flex items-center w-full justify-evenly lg:text-xl  text-gray-200 pt-4 lg:pt-0">
               <HeaderButton title="MENU" linkhref="/" />
               <HeaderButton title="ON TAP" linkhref="/" />
             </ul>
           </nav>
-        </div>
+        </motion.div>
         <div className="hidden lg:flex justify-between items-center ">
           <Link href={"/"}>
-            <Image src="/logo.png" alt="logo" width={100} height={100} />
+            <Image src="/logoName.png" alt="logo" width={200} height={200} />
           </Link>
         </div>
-        <div className="flex flex-1  justify-center lg:px-2 items-center">
+        <motion.div
+          initial={{ x: 200, opacity: 0 }}
+          transition={{ duration: 1.2 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-1  justify-center lg:px-2 items-center"
+        >
           <nav className="w-full">
-            <ul className="lg:flex items-center w-full justify-evenly lg:text-xl  text-gray-700 pt-4 lg:pt-0">
+            <ul className="lg:flex items-center w-full justify-evenly lg:text-xl  text-gray-200 pt-4 lg:pt-0">
               <HeaderButton title="OUR STORY" linkhref="/" />
               <HeaderButton title="BLOG" linkhref="/" />
             </ul>
           </nav>
-        </div>
+        </motion.div>
       </div>
     </header>
   );

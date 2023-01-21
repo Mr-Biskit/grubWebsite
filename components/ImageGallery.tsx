@@ -53,21 +53,23 @@ export default function ImageGallery() {
           />
         ))}
       </motion.div>
-      <div className="w-screen  p-4  items-center justify-between flex bg-[#AF9665]">
+      <div className="w-screen  p-4  items-center justify-between flex bg-black">
         {/*  */}
-        <div className="bg-black h-2 w-1/3 ml-3" />
+        <div className="bg-white h-2 w-1/3 ml-3" />
         <Link
           href="/"
-          className="items-center justify-center hover:animate-bounce "
+          className="items-center justify-center bg-white p-2 rounded-lg animate-pulse"
         >
-          <Image
+          <motion.img
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
             alt="insta"
             src="/foodImages/insta.png"
             width={60}
             height={60}
           />
         </Link>
-        <div className="bg-black h-2 w-1/3 mr-3" />
+        <div className="bg-white h-2 w-1/3 mr-3" />
       </div>
     </div>
   );

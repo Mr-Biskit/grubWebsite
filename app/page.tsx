@@ -2,13 +2,15 @@ import React from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import ImageGallery from "../components/ImageGallery";
+import InfoCards from "../components/InfoCards";
 
 export default function page() {
   return (
-    <div>
+    <div className="w-screen">
       <Header />
       <Hero />
       <ImageGallery />
+      <InfoCards />
 
       <div className="px-4">
         <div className="max-w-3xl bg-black text-white rounded-lg mx-auto my-16 p-16">
